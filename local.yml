@@ -1,0 +1,38 @@
+---
+- hosts: localhost
+  tasks:
+
+  - name: Install Homebrew apps
+    homebrew:
+      name:
+        - mas
+        - tmux
+      state: present
+
+  - name: Instal Homebrew cask apps
+    homebrew_cask:
+      name:
+        - spectacle
+        - visual-studio-code
+        - docker
+        - skype
+        - 1password
+        - karabiner-elements
+        - slack
+        - firefox
+        - google-chrome
+        - insomnia
+        - clipy
+        - beyond-compare
+        - docker
+        - tableplus
+        - adobe-creative-cloud
+        - spotify
+      state: present
+
+  - name: Install AppStore apps
+    mas:
+      id:
+        - 506189836 # Harvest
+        - 1451685025 # WireGuard
+      state: present
